@@ -17,3 +17,18 @@ $ argocd app create guestbook \
   --dest-server https://kubernetes.default.svc \
   --app-namespace guestbook-namespace \
   --project web-app-pet-project
+
+# https://github.com/argoproj/argocd-example-apps/tree/master/helm-guestbook
+
+$ argocd app create helm-guestbook \
+  --repo https://github.com/argoproj/argocd-example-apps.git \
+  --path helm-guestbook \
+  --dest-server https://kubernetes.default.svc \
+  --app-namespace helm-guestbook-namespace \
+  --project web-app-pet-project
+
+$ argocd app create sock-shop \
+  --repo https://github.com/argoproj/argocd-example-apps.git \
+  --path sock-shop \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace default
